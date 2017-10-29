@@ -46,11 +46,6 @@ class Bank:
     def get_balance(self, number):
         return self.customers[number].get_balance()
 
-    def dump(self):
-        with open('result.json', 'a') as fp:
-            for key in self.customers:
-                json.dump(self.customers[key].__dict__, fp)
-
 
 class BankingSystem:
     def __init__(self):
@@ -142,7 +137,7 @@ if __name__ == "__main__":
                 'withdraw': withdraw,
                 'get_balance': get_balance,
                 'transfer': transfer,
-                'dump':dump,
+                'dump': dump,
                 'exit': exit_program}
     banking_system = BankingSystem()
     banking_system.add_bank("superbank")
